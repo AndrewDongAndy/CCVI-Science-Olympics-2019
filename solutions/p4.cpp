@@ -2,7 +2,7 @@
 //
 
 /*
-
+Tested using brute-force
 */
 
 
@@ -21,15 +21,7 @@ bool cmp_point(const point &a, const point &b) {
     return a.x < b.x;
 }
 
-bool cmp_set(const point &a, const point &b) {
-    return a.y < b.y;
-}
-
-double dist(const point &a, const point &b) {
-    return hypot(a.x - b.x, a.y - b.y);
-}
-
-int squared_dist(const point &a, const point &b) {
+int dist_squared(const point &a, const point &b) {
     return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
 }
 
@@ -44,15 +36,16 @@ void run() {
         cin >> s.x >> s.y;
     }
     sort(stars.begin(), stars.end(), cmp_point);
-    double best = INF;
+    int best = INF;
     set< pair<int, int> > s;
     for (int i = 0; i < N; i++) {
-        while (s.size() != 0 && stars[(*s.begin()).second].x < stars[i].x - best) {
+        int d = (int) ceil(sqrt(best));
+        while (s.size() != 0 && stars[(*s.begin()).second].x < stars[i].x - d) {
             s.erase(s.begin());
         }
         auto it = s.lower_bound({stars[i].y - best, -1});
-        while (it != s.end() && (*it).first <= stars[i].y + best) {
-            best = min(best, dist(stars[i], stars[(*it).second]));
+        while (it != s.end() && (*it).first <= stars[i].y + d) {
+            best = min(best, dist_squared(stars[i], stars[(*it).second]));
             it++;
         }
         s.insert({stars[i].y, i});

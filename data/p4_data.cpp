@@ -38,7 +38,7 @@ int main() {
     srand(time(0));
 
     init_taken();
-    int N = 1000;
+    int N = 2000;
     cout << N << '\n';
     for (int i = 0; i < N; i++) {
         int x, y;

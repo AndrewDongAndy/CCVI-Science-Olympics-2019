@@ -17,11 +17,7 @@ struct point {
     int x, y;
 };
 
-double dist(const point &a, const point &b) {
-    return hypot(a.x - b.x, a.y - b.y);
-}
-
-int squared_dist(const point &a, const point &b) {
+int dist_squared(const point &a, const point &b) {
     return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
 }
 
@@ -35,10 +31,10 @@ void run() {
         point &s = stars[i];
         cin >> s.x >> s.y;
     }
-    double best = INF;
+    int best = INF;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < i; j++) {
-            best = min(best, dist(stars[i], stars[j]));
+            best = min(best, dist_squared(stars[i], stars[j]));
         }
     }
     cout << best << '\n';
