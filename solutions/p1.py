@@ -1,10 +1,10 @@
 T = 10
 for _ in range(T):
     code = input()
-    cnt = 0
+    s = 0
     for i in code:
-        cnt = max(cnt, code.count(i))
-    if int(code[0]) > 4 and cnt > 1:
+        s += int(i)
+    if int(code[0]) >= 5 and s < 18:
         print("So cute!")
     else:
         print("Sorry")
