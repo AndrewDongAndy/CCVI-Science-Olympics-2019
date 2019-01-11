@@ -3,6 +3,11 @@
 
 /*
 Tested using brute-force
+
+THIS SOLUTION IS STILL WRONG THOUGH
+
+NEED TO ERASE BASED ON X-COORDINATE, BUT SET IS SORTED
+ACCORDING TO Y-COORDINATE
 */
 
 
@@ -17,7 +22,7 @@ struct point {
     int x, y;
 };
 
-bool cmp_point(const point &a, const point &b) {
+bool cmp_x(const point &a, const point &b) {
     return a.x < b.x;
 }
 
@@ -35,11 +40,11 @@ void run() {
         point &s = stars[i];
         cin >> s.x >> s.y;
     }
-    sort(stars.begin(), stars.end(), cmp_point);
+    sort(stars.begin(), stars.end(), cmp_x);
     int best = INF;
     set< pair<int, int> > s;
     for (int i = 0; i < N; i++) {
-        int d = (int) ceil(sqrt(best));
+        int d = (int) sqrt(best);
         while (s.size() != 0 && stars[(*s.begin()).second].x < stars[i].x - d) {
             s.erase(s.begin());
         }
