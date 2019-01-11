@@ -38,9 +38,8 @@ Bob and his group of computer science enthusiasts is going puppy shopping, and t
 
 They consider a puppy cute if and only if:
 \begin{itemize}
-    \item the first digit is at least 5;
-    \item the sum of the digits is less then 18; and
-    \item some digit occurs more than once.
+    \item the first digit is at least 5; and
+    \item the sum of the digits is less then 18.
 \end{itemize}
 
 Can you tell Bob and his group of computer scientists if each puppy is cute enough?
@@ -61,11 +60,12 @@ For each puppy, if it meets the cuteness criteria, output \verb|So cute!|. Other
 \heading{Sample Input}
 \vspace{-\topsep}
 \begin{verbatim}
-6212
-7444
-9017
+5212
+1234
+7890
 \end{verbatim}
 
+\vspace{-\topsep}
 \heading{Output for Sample Input}
 \vspace{-\topsep}
 \begin{verbatim}
@@ -74,9 +74,10 @@ Sorry
 Sorry
 \end{verbatim}
 
+\vspace{-\topsep}
 \heading{Explanation for Output for Sample Input}
 
-The first code \verb|6212| meets all three of the cute criteria. However, \verb|7444| has a digit sum of 21, which is too big, and \verb|9017| does not have a digit occurring more than once.
+The first code \verb|5212| meets both of the cute criteria. However, the first digit of \verb|1234| is too small, and \verb|7890| has a digit sum of 24, which is too big.
 
 Note: the sample input shown only contains three cases, but the real data files will contain ten.
 
@@ -92,23 +93,24 @@ Note: the sample input shown only contains three cases, but the real data files 
 
 \heading{Problem Description}
 
-Stack Overflow is a frequently-visited forum by professional programmers, as it fulfills all of their programming needs. As with many other forums, features include asking and answering questions and, of course, upvoting questions or answers that one finds helpful. Bob, being the enthusiastic programmer he is, has posted answers to $N$ questions, the $i$th of which has received $u_i$ upvotes. However, not all of his answers are of the best quality: sometimes, programmers will choose to give negative upvotes, or \textit{downvotes}. Therefore, $u_i$ can also be negative.
+Stack Overflow is a frequently-visited forum by professional programmers, as it fulfills all of their programming needs. As with many other forums, features include asking and answering questions and, of course, upvoting answers that one finds helpful. Bob, being the enthusiastic programmer he is, has posted answers to $N$ questions. However, not all of his answers are of the best quality: sometimes, other users will choose to give negative upvotes, or \textit{downvotes}. Therefore, the score of an answer can also be negative.
 
-Bob is competing in a contest sponsored by Stack Overflow that rewards a T-shirt for the user with the highest score, and a sock for the person with the lowest score. A user may select up to $K$ of their posts to submit to the contest, and the user’s score is calculated as the sum of the number of upvotes of these posts.
+Bob is competing in a contest sponsored by Stack Overflow that rewards a T-shirt for the user with the highest total score, and a pair of socks for the person with the lowest total score. A user may select up to $K$ of their posts to submit to the contest, and the user’s score is calculated as the sum of the scores of the selected posts. If a user submits no answers, their score is 0.
 
+Bob doesn't know whether to aim for the socks or for the T-shirt! Therefore, he is asking your group of programmers for help. To judge his chances of winning, he wants to know: what is the lowest and highest possible score he can attain in the contest?
 
 \heading{Input Specification}
 
 The input will consist of ten test cases.
 
-Each test case contains two lines. The first line contains two space-separated integers, $N$ ($1 \le N \le 10^6$), the number of answers Bob has posted, and $K$ ($0 \le K \le N$), the maximum number of posts Bob can select for the contest. The second line contains $N$ space-separated integers $u_1, u_2, \ldots, u_N$ ($-10^3 \le u_i \le 10^3$), the number of upvotes Bob's $N$ answers have received.
+Each test case contains two lines. The first line contains two space-separated integers, $N$ ($0 \le N \le 10^5$), the number of answers Bob has posted, and $K$ ($0 \le K \le N$), the maximum number of posts Bob can select for the contest. The second line contains $N$ space-separated integers each between $-1000$ and 1000 inclusive: the scores that Bob's $N$ answers have received.
 
-For 50\% of the available marks, $u_i \ge 0$ for all $1 \le i \le N$.
+For 50\% of the available marks, the score for each of Bob's posts is positive.
 
 
 \heading{Output Specification}
 
-For each test case, output two space-separated integers on one line: the minimum and maximum possible number of total upvotes Bob can get by selecting up to $K$ of his $N$ answers.
+For each test case, output two space-separated integers on one line: the minimum and maximum possible score Bob can get by selecting up to $K$ of his $N$ answers.
 
 
 \heading{Sample Input}
@@ -122,16 +124,18 @@ For each test case, output two space-separated integers on one line: the minimum
 -100 -100 -100 -100
 \end{verbatim}
 
+\vspace{-\topsep}
 \heading{Output for Sample Input}
 \vspace{-\topsep}
 \begin{verbatim}
-19 26
+0 26
 -9 3
 -400 0
 \end{verbatim}
 
 Note: the sample input shown only contains three cases, but the real data files will contain ten.
 
+% \vspace{-\topsep}
 % \heading{Explanation for Output for Sample Input}
 
 \pagebreak
@@ -147,9 +151,9 @@ Note: the sample input shown only contains three cases, but the real data files 
 
 At long last, Bob has reached the final frontier (and the most dreaded) of his school courses: his gym class. The incredibly bulky gym teacher, Mr. Yava, enjoys torturing his students by making them run laps around the perfectly-circular gymnasium. Every day, while the class is running, Mr. Yava likes to play a fun game called ``Mr. Yava tells you what to do".
 
-Mr. Yava will successively bark out $N$ degree values between 0 and 360, inclusive, each interpreted as a value in degrees. Each number yelled specifies the number of degrees Bob must run along the outside of the gymnasium. Bob must follow all of these instructions in the order they are given.
+Mr. Yava will successively call out $N$ degree values between 0 and 360, inclusive, each interpreted as a value in degrees. Each number yelled specifies the number of degrees Bob must run along the outside of the gymnasium. Bob must follow all of these instructions in the order they are given.
 
-However, there's one catch: the teacher does not specify the direction in which Bob must run. Therefore, for each instruction, Bob can choose to run either clockwise or counterclockwise.
+However, there's one catch: Mr. Yava does not specify the direction in which Bob must run. Therefore, for each instruction, Bob can choose to run either clockwise or counterclockwise.
 
 Bob and his classmates begin the workout at the $0^{\circ}$ point of the gym, and Mr. Yava always watches his class standing at the $180^{\circ}$ point of the gym and asks the class to gather in front of him after the workout. Bob, being an non-athletic computer science enthusiast, wants to do as little running as possible, and wants to end exactly where his teacher stands.
 
@@ -160,7 +164,7 @@ Bob is too tired from running around, so he asks your group of programmers for h
 
 The input will consist of ten test cases, each corresponding to one day of Bob's gym class.
 
-Each test case is two lines long. The first line contains the integer $N$ ($1 \le N \le 30)$, the number of instructions yelled by Mr. Yava. The second and last line of the case contains $N$ space-separated integers, each between 0 and 360 inclusive: the instructions given by Mr. Yava in order.
+The first line of each case contains the integer $N$ ($1 \le N \le 30)$, the number of instructions yelled by Mr. Yava. The second and last line of the case contains $N$ space-separated integers, each between 0 and 360 inclusive: the instructions given by Mr. Yava in order.
 
 For 50\% of the available marks, $N \le 15$.
 
@@ -179,6 +183,7 @@ Output one line for each test case: the number of ways to reach Mr. Yava at $180
 180 180
 \end{verbatim}
 
+\vspace{-\topsep}
 \heading{Output for Sample Input}
 \vspace{-\topsep}
 \begin{verbatim}
@@ -188,6 +193,7 @@ Output one line for each test case: the number of ways to reach Mr. Yava at $180
 
 Note: the sample input shown only contains two cases, but the real data files will contain ten.
 
+% \vspace{-\topsep}
 % \heading{Explanation for Output for Sample Input}
 
 \pagebreak
@@ -238,6 +244,7 @@ For each test case, output one integer on its own line. The answer will always b
 2 4
 \end{verbatim}
 
+\vspace{-\topsep}
 \heading{Output for Sample Input}
 \vspace{-\topsep}
 \begin{verbatim}
@@ -247,6 +254,7 @@ For each test case, output one integer on its own line. The answer will always b
 
 Note: the sample input shown only contains two cases, but the real data files will contain ten.
 
+% \vspace{-\topsep}
 % \heading{Explanation for Output for Sample Input}
 
 
