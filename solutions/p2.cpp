@@ -23,12 +23,8 @@ void run() {
     sort(a.begin(), a.end());
     int m = 0, M = 0;
     for (int i = 0; i < K; i++) {
-        if (a[i] < 0) {
-            m += a[i];
-        }
-        if (a[N - 1 - i] > 0) {
-            M += a[N - 1 - i];
-        }
+        m += a[i]
+        M += a[N - 1 - i];
     }
     cout << m << ' ' << M << '\n';
 }
@@ -38,11 +34,7 @@ int main() {
     cin.tie(0);
     cout.tie(0);
 
-#ifdef _DEBUG
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    freopen("debug_output.txt", "w", stderr);
-#endif
+    freopen("DATA21.txt", "r", stdin);
 
 
     int TC = 10;
