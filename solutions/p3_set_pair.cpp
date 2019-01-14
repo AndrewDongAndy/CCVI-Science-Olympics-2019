@@ -8,6 +8,8 @@ THIS SOLUTION IS STILL WRONG THOUGH
 
 NEED TO ERASE BASED ON X-COORDINATE, BUT SET IS SORTED
 ACCORDING TO Y-COORDINATE
+
+Not needed anymore though because problem was made easier
 */
 
 
