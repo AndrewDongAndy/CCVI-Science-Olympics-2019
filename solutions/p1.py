@@ -1,7 +1,6 @@
-f = open('DATA11.txt')
+import sys
 
-def input():
-    return f.readline().strip()
+sys.stdin = open('DATA11.txt')
 
 for _ in range(10):
     code = input()
