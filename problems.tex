@@ -36,7 +36,7 @@ Probably just use the Google Docs version (and omit this page). However, if ther
 
 It is a well-known fact that cute puppies increase programming productivity. Therefore, the most talented programmers are always on the lookout for the cutest puppies.
 
-Bob and his group of computer science enthusiasts is going puppy shopping, and thus wants to find out whether each puppy meets the ``cuteness" criteria. Like any regular puppy shopper would, they have decided to label each puppy with a four-digit ``cute code" in order to determine its cuteness.
+Bob and his group of computer science enthusiasts are going puppy shopping, and thus want to find out whether each puppy meets the ``cuteness" criteria. Like any regular puppy shopper would, they have decided to label each puppy with a four-digit ``cute code" in order to determine its cuteness.
 
 They consider a puppy cute if and only if:
 \begin{itemize}
@@ -97,7 +97,7 @@ Note: the sample input shown only contains three cases, but the real data files 
 
 Stack Overflow is a frequently-visited forum by professional programmers, as it fulfills all of their programming needs. As with many other forums, features include asking and answering questions and, of course, upvoting answers that one finds helpful. Bob, being the enthusiastic programmer he is, has posted answers to $N$ questions. However, not all of his answers are of the best quality: sometimes, other users will choose to give negative upvotes, or \textit{downvotes}. Therefore, the score of an answer can also be negative.
 
-Bob is competing in a contest sponsored by Stack Overflow that rewards a T-shirt for the user with the highest total score, and a pair of socks for the person with the lowest total score. A user may select up to $K$ of their posts to submit to the contest, and the user’s score is calculated as the sum of the scores of the selected posts. If a user submits no answers, their score is 0.
+Bob is competing in a contest sponsored by Stack Overflow that rewards a T-shirt for the user with the highest total score, and a pair of socks for the person with the lowest total score. A user must choose $K$ of their posts to submit to the contest, and the user’s score is calculated as the sum of the scores of the selected posts. 
 
 Bob doesn't know whether to aim for the socks or for the T-shirt! Therefore, he is asking your group of programmers for help. To judge his chances of winning, he wants to know: what is the lowest and highest possible score he can attain in the contest?
 
@@ -105,10 +105,7 @@ Bob doesn't know whether to aim for the socks or for the T-shirt! Therefore, he 
 
 The input will consist of ten test cases.
 
-Each test case contains two lines. The first line contains two space-separated integers, $N$ ($0 \le N \le 10^5$), the number of answers Bob has posted, and $K$ ($0 \le K \le N$), the maximum number of posts Bob can select for the contest. The second line contains $N$ space-separated integers each between $-1000$ and 1000 inclusive: the scores that Bob's $N$ answers have received.
-
-For 50\% of the available marks, the score for each of Bob's posts is positive.
-
+Each test case contains two lines. The first line contains two space-separated integers, $N$ ($0 \le N \le 10^5$), the number of answers Bob has posted, and $K$ ($0 \le K \le N$), the number of posts Bob can select for the contest. The second line contains $N$ space-separated integers each between $-1000$ and 1000 inclusive: the scores that Bob's $N$ answers have received.
 
 \heading{Output Specification}
 
@@ -130,9 +127,9 @@ For each test case, output two space-separated integers on one line: the minimum
 \heading{Output for Sample Input}
 \vspace{-\topsep}
 \begin{verbatim}
-0 26
--9 3
--400 0
+19 26
+-9 2
+-400 -400
 \end{verbatim}
 
 Note: the sample input shown only contains three cases, but the real data files will contain ten.
@@ -146,7 +143,65 @@ Note: the sample input shown only contains three cases, but the real data files 
 
 % ========== PROBLEM 3 ==========
 
-\problem{3}{Final Frontier}
+\problem{3}{Stargazing}
+
+
+\heading{Problem Description}
+
+After each long, grueling day of programming, Bob sits down in a rocking chair in his backyard to gaze at the stars. Bob lives in a rural area, so there is no light pollution obscuring his view. Also, it is the middle of summer, so it is just the right temperature to enjoy a good session of stargazing.
+
+Every night, as Bob sips his lemonade, he wishes he had someone with him to enjoy the stars. However, as he feels lonely, his mind wanders off...
+
+As he looks at the stars, he notices that they are not all uniformly distributed across the sky. Remembering the most recent book he read (from two years ago), he defines the \textit{fault} of the stars to be the square of the minimum distance between any two distinct stars.
+
+More formally, the night sky can be represented as a 2D coordinate plane containing $N$ points. If the two stars with minimal distance between them are located at $(x_1, y_1)$ and $(x_2, y_2)$, the fault of the stars is defined to be $(x_1 - x_2)^2 + (y_1 - y_2)^2$.
+
+Given ten arrangements of stars, can you help Bob determine the fault of each arrangement?
+
+
+\heading{Input Specification}
+
+The input will consist of ten test cases, each corresponding to a night of stargazing.
+
+Each case begins with the value $N$ ($2 \le N \le 10^3$), the number of stars in the night sky. This is followed by $N$ pairs of integers $x, y$ ($-10^4 \le x, y \le 10^4$), the coordinates of a star.
+
+\heading{Output Specification}
+
+For each test case, output one integer on its own line. The answer will always be an integer.
+
+
+\heading{Sample Input}
+\vspace{-\topsep}
+\begin{verbatim}
+2
+0 0
+2 0
+3
+0 1
+4 1
+2 4
+\end{verbatim}
+
+\vspace{-\topsep}
+\heading{Output for Sample Input}
+\vspace{-\topsep}
+\begin{verbatim}
+4
+13
+\end{verbatim}
+
+Note: the sample input shown only contains two cases, but the real data files will contain ten.
+
+% \vspace{-\topsep}
+% \heading{Explanation for Output for Sample Input}
+
+\pagebreak
+
+
+
+% ========== PROBLEM 4 ==========
+
+\problem{4}{Final Frontier}
 
 
 \heading{Problem Description}
@@ -191,67 +246,6 @@ Output one line for each test case: the number of ways to reach Mr. Yava at $180
 \begin{verbatim}
 2
 0
-\end{verbatim}
-
-Note: the sample input shown only contains two cases, but the real data files will contain ten.
-
-% \vspace{-\topsep}
-% \heading{Explanation for Output for Sample Input}
-
-\pagebreak
-
-
-
-% ========== PROBLEM 4 ==========
-
-\problem{4}{Stargazing}
-
-
-\heading{Problem Description}
-
-After each long, grueling day of programming, Bob sits down in a rocking chair in his backyard to gaze at the stars. Bob lives in a rural area, so there is no light pollution obscuring his view. Also, it is the middle of summer, so it is just the right temperature to enjoy a good session of stargazing.
-
-Every night, as Bob sips his lemonade, he wishes he had someone with him to enjoy the stars. However, as he feels lonely, his mind wanders off...
-
-As he looks at the stars, he notices that they are not all uniformly distributed across the sky. Remembering the most recent book he read (from two years ago), he defines the \textit{fault} of the stars to be the square of the minimum distance between any two distinct stars.
-
-More formally, the night sky can be represented as a 2D coordinate plane containing $N$ points. If the two stars with minimal distance between them are located at $(x_1, y_1)$ and $(x_2, y_2)$, the fault of the stars is defined to be $(x_1 - x_2)^2 + (y_1 - y_2)^2$.
-
-Given ten arrangements of stars, can you help Bob determine the fault of each arrangement?
-
-
-\heading{Input Specification}
-
-The input will consist of ten test cases, each corresponding to a night of stargazing.
-
-Each case begins with the value $N$ ($2 \le N \le 10^5$), the number of stars in the night sky. This is followed by $N$ pairs of integers $x, y$ ($-10^4 \le x, y \le 10^4$), the coordinates of a star.
-
-For 60\% of the available marks, $N \le 10^3$.
-
-
-\heading{Output Specification}
-
-For each test case, output one integer on its own line. The answer will always be an integer.
-
-
-\heading{Sample Input}
-\vspace{-\topsep}
-\begin{verbatim}
-2
-0 0
-2 0
-3
-0 1
-4 1
-2 4
-\end{verbatim}
-
-\vspace{-\topsep}
-\heading{Output for Sample Input}
-\vspace{-\topsep}
-\begin{verbatim}
-4
-13
 \end{verbatim}
 
 Note: the sample input shown only contains two cases, but the real data files will contain ten.
