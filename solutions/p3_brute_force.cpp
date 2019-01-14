@@ -1,4 +1,4 @@
-// January 10, 2019
+// January 14, 2019
 //
 
 /*
@@ -52,7 +52,7 @@ int main() {
 #endif
 
 
-    int TC = 2;
+    int TC = 10;
     while (TC--) {
         run();
     }
