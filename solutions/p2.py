@@ -1,7 +1,6 @@
-f = open('DATA21.txt')
+import sys
 
-def input():
-    return f.readline().strip()
+sys.stdin = open('DATA21.txt')
 
 for _ in range(10):
     N, K = [int(s) for s in input().split()]
