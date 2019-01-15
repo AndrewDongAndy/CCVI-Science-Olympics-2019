@@ -97,7 +97,7 @@ Note: the sample input shown only contains three cases, but the real data files 
 
 Stack Overflow is a frequently-visited forum by professional programmers, as it fulfills all of their programming needs. As with many other forums, features include asking and answering questions and, of course, upvoting answers that one finds helpful. Bob, being the enthusiastic programmer he is, has posted answers to $N$ questions. However, not all of his answers are of the best quality: sometimes, other users will choose to give negative upvotes, or \textit{downvotes}. Therefore, the score of an answer can also be negative.
 
-Bob is competing in a contest sponsored by Stack Overflow that rewards a T-shirt for the user with the highest total score, and a pair of socks for the person with the lowest total score. A user must choose $K$ of their posts to submit to the contest, and the user’s score is calculated as the sum of the scores of the selected posts. 
+Bob is competing in a contest sponsored by Stack Overflow that rewards a T-shirt for the user with the highest total score, and a pair of socks for the person with the lowest total score. A user must choose exactly $K$ of their posts to submit to the contest, and the user’s score is calculated as the sum of the scores of the selected posts.
 
 Bob doesn't know whether to aim for the socks or for the T-shirt! Therefore, he is asking your group of programmers for help. To judge his chances of winning, he wants to know: what is the lowest and highest possible score he can attain in the contest?
 
@@ -105,11 +105,11 @@ Bob doesn't know whether to aim for the socks or for the T-shirt! Therefore, he 
 
 The input will consist of ten test cases.
 
-Each test case contains two lines. The first line contains two space-separated integers, $N$ ($0 \le N \le 10^5$), the number of answers Bob has posted, and $K$ ($0 \le K \le N$), the number of posts Bob can select for the contest. The second line contains $N$ space-separated integers each between $-1000$ and 1000 inclusive: the scores that Bob's $N$ answers have received.
+Each test case contains two lines. The first line contains two space-separated integers, $N$ ($0 \le N \le 10^5$), the number of answers Bob has posted, and $K$ ($0 \le K \le N$), the number of posts Bob can select for the contest. The second line contains $N$ space-separated integers, each between $-1000$ and 1000 inclusive: the scores that Bob's $N$ answers have received.
 
 \heading{Output Specification}
 
-For each test case, output two space-separated integers on one line: the minimum and maximum possible score Bob can get by selecting up to $K$ of his $N$ answers.
+For each test case, output two space-separated integers on one line: the minimum and maximum possible score Bob can get by selecting exactly $K$ of his $N$ answers for the contest.
 
 
 \heading{Sample Input}
@@ -208,7 +208,7 @@ Note: the sample input shown only contains two cases, but the real data files wi
 
 At long last, Bob has reached the final frontier (and the most dreaded) of his school courses: his gym class. The incredibly bulky gym teacher, Mr. Yava, enjoys torturing his students by making them run laps around the perfectly-circular gymnasium. Every day, while the class is running, Mr. Yava likes to play a fun game called ``Mr. Yava tells you what to do".
 
-Mr. Yava will successively call out $N$ degree values between 0 and 360, inclusive, each interpreted as a value in degrees. Each number yelled specifies the number of degrees Bob must run along the outside of the gymnasium. Bob must follow all of these instructions in the order they are given.
+Mr. Yava will successively call out $N$ degree values between 0 and 180, inclusive, each interpreted as a value in degrees. Each number yelled specifies the number of degrees Bob must run along the outside of the gymnasium. Bob must follow all of these instructions in the order they are given.
 
 However, there's one catch: Mr. Yava does not specify the direction in which Bob must run. Therefore, for each instruction, Bob can choose to run either clockwise or counterclockwise.
 
@@ -221,7 +221,7 @@ Bob is too tired from running around, so he asks your group of programmers for h
 
 The input will consist of ten test cases, each corresponding to one day of Bob's gym class.
 
-The first line of each case contains the integer $N$ ($1 \le N \le 30)$, the number of instructions yelled by Mr. Yava. The second and last line of the case contains $N$ space-separated integers, each between 0 and 360 inclusive: the instructions given by Mr. Yava in order.
+The first line of each case contains the integer $N$ ($1 \le N \le 30)$, the number of instructions yelled by Mr. Yava. The second and last line of the case contains $N$ space-separated integers, each between 0 and 180 inclusive: the instructions given by Mr. Yava in order.
 
 For 50\% of the available marks, $N \le 15$.
 
