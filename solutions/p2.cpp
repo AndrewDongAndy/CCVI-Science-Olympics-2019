@@ -11,19 +11,17 @@
 using namespace std;
 
 
-int N, K;
-vector<int> a;
-
 void run() {
+    int N, K;
     cin >> N >> K;
-    a.resize(N);
+    vector<int> a(N);
     for (int i = 0; i < N; i++) {
         cin >> a[i];
     }
     sort(a.begin(), a.end());
     int m = 0, M = 0;
     for (int i = 0; i < K; i++) {
-        m += a[i]
+        m += a[i];
         M += a[N - 1 - i];
     }
     cout << m << ' ' << M << '\n';
