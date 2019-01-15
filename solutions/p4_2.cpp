@@ -7,9 +7,9 @@ int dp[31][MAXD];
 
 int main() {
   ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#ifdef _DEBUG
-  freopen("/Users/huogenx/Desktop/run/input.txt", "r", stdin);
-#endif
+  
+  freopen("DATA41.txt", "r", stdin);
+
   int T = 10;
   while (T--) {
     memset(dp, 0, sizeof dp);
