@@ -11,16 +11,14 @@
 using namespace std;
 
 
-int N;
-vector<int> a;
-
 void run() {
+    int N;
     cin >> N;
-    a.resize(N);
+    vector<int> a(N);
     for (int i = 0; i < N; i++) {
         cin >> a[i];
     }
-    vector< vector<int> > dp(N + 1, vector<int>(360));
+    vector< vector<int> > dp(N + 1, vector<int>(360)); // int is large enough
     dp[0][0] = 1;
     for (int i = 1; i <= N; i++) {
         for (int j = 0; j < 360; j++) {
