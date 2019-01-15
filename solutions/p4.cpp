@@ -37,11 +37,7 @@ int main() {
     cin.tie(0);
     cout.tie(0);
 
-#ifdef _DEBUG
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    freopen("debug_output.txt", "w", stderr);
-#endif
+    freopen("DATA41.txt", "r", stdin);
 
 
     int TC = 10;
