@@ -2,6 +2,9 @@
 //
 
 /*
+This used to be the brute-force solution.
+
+Now it is the full solution.
 */
 
 
