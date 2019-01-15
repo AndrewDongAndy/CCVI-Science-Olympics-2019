@@ -45,10 +45,10 @@ int main() {
 
     srand(time(0));
 
-    
+
     print_case({80, 100});
     print_case({90, 90, 90, 90, 90, 90});
-    vector<int> sizes = {20, 20, 25, 25, 30, 30, 30, 30};
+    vector<int> sizes = {15, 15, 15, 20, 25, 30, 30, 30};
     for (int s : sizes) {
         print_case(s);
     }
