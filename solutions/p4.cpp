@@ -18,7 +18,7 @@ void run() {
     for (int i = 0; i < N; i++) {
         cin >> a[i];
     }
-    vector< vector<int> > dp(N + 1, vector<int>(360)); // int is large enough
+    vector< vector<long long> > dp(N + 1, vector<long long>(360)); // int is large enough
     dp[0][0] = 1;
     for (int i = 1; i <= N; i++) {
         for (int j = 0; j < 360; j++) {
